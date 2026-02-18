@@ -17,8 +17,8 @@ It supports dynamic post publishing, user accounts, and an admin dashboard for c
 - **Database:** PostgreSQL
 
 ## Repository Structure
-- `frontend/` (or your Angular folder) — Angular SPA
-- `backend/` (or your Express folder) — Express API
+- `blog-angular/` — Angular SPA
+- `blog-express/` — Express API
 
 ## Notes
 - `node_modules/` and build outputs are intentionally not included.
