@@ -1,0 +1,105 @@
+.entireFooter{
+    width: 100%;
+    background-color: #144E93;
+    padding : 50px 5%;
+}
+
+.routingPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.sectorHeader{
+    font-size: 20px;
+    font-weight: bold;
+    color: #6CB5FF;
+}
+
+.list-choise{
+    margin-top: 15px;
+    font-size: 16px;
+    color: white;
+    cursor:pointer;
+}
+
+.socialPanel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dapLogo{
+    width: 60%;
+    height: 35%;
+    object-fit: cover;
+}
+
+.socialMedia{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    margin-top: 35px;
+    cursor: pointer;
+}
+
+.sector{
+    margin-top: 40px;
+}
+
+.copyright{
+    background-color: #144E93;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#contact{
+    cursor: pointer;
+}
+
+@media (min-width:992px){
+
+    .entireFooter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding : 100px 5%;
+    }
+ 
+    .routingPanel{
+        width: 60%;
+        margin-top: 75px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .sector{
+        margin-top: 0;
+    }
+
+    .sectorHeader{
+        font-size: 22px;
+    }
+    
+    .list-choise{
+        font-size: 18px;
+    }
+
+    .socialPanel{
+        width: 30%;
+    }
+
+    .dapLogo{
+        width: 80%;
+        height: 40%;
+        object-fit: cover;
+    }
+
+ 
+}

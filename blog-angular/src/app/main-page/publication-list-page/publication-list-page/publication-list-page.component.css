@@ -1,0 +1,34 @@
+.publicationPanel{
+    margin: 0 5%;
+}
+
+.title-with-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.title-line {
+    flex-grow: 1; 
+    height: 2px;
+    background-color: #0281FF;
+}
+
+.publication-list-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.some{
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 ;
+}
+
+@media (min-width: 992px) {
+    .publication-list-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}

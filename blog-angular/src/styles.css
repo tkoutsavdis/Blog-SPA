@@ -1,0 +1,65 @@
+html, body {
+    margin:0;
+    height: 100%;
+    font-family: "Manrope", serif;
+
+}
+
+.submitBtn {
+    color: white !important;
+    background-color: #144E93 !important;
+    border-color: #144E93 !important; 
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitBtn:hover {
+    background-color: #104381 !important; 
+    color: white !important;
+    border-color: #104381 !important;
+}
+
+.submitBtn:active,
+.submitBtn:focus {
+    background-color: #0D365E !important;
+    color: white !important;
+    border-color: #0D365E !important;
+}
+
+/* Remove pseudo-element content for the size picker label and items */
+.ql-picker.ql-size .ql-picker-label::before,
+.ql-picker.ql-size .ql-picker-item::before {
+  content: '' !important;
+}
+
+.ql-picker.ql-size .ql-picker-label::after {
+    content: attr(data-value);
+}
+
+
+.mainTitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.panelTitle{
+    font-size: 18px;
+    font-weight: bold;  
+}
+
+.form-label{
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+@media(min-width:992px){
+    .mainTitle{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .panelTitle{
+        font-size: 22px;
+        font-weight: bold;  
+    }
+}

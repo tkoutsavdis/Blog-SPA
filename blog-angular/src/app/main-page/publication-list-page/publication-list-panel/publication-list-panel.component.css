@@ -1,0 +1,63 @@
+.publicationPanel{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.infoContainer{
+  width: 100%;
+  margin-left: 10px;
+}
+
+.publicationImage{
+    width: 50%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.myType{
+  background-color: #144E93;
+  color: white;
+  text-align: center;
+}
+
+.miniText{
+  font-size: 16px;
+}
+
+.link{
+  color: #144E93;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.mainInfo{
+  margin-top: 25px;
+}
+
+.extraInfo{
+  margin-top: 25px;
+  font-style: italic;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .publicationPanel {
+    width: 70%;
+  }
+
+  .footerPanel{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .publicationPanel {
+    width: 100%;
+  }
+
+  .miniText{
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,47 @@
+<div class="stage">
+  <img class="bg" src="assets/bg.jpg" alt="Background" />
+
+  <button
+    class="corner tl"
+    [class.pressed]="isPressed('tl')"
+    (pointerdown)="onPointerDown($event, 'tl')"
+    (pointerup)="onPointerUp($event, 'tl')"
+    (pointercancel)="onPointerCancel($event, 'tl')"
+    (lostpointercapture)="onLostPointerCapture($event, 'tl')"
+  >
+    TL
+  </button>
+
+  <button
+    class="corner tr"
+    [class.pressed]="isPressed('tr')"
+    (pointerdown)="onPointerDown($event, 'tr')"
+    (pointerup)="onPointerUp($event, 'tr')"
+    (pointercancel)="onPointerCancel($event, 'tr')"
+    (lostpointercapture)="onLostPointerCapture($event, 'tr')"
+  >
+    TR
+  </button>
+
+  <button
+    class="corner bl"
+    [class.pressed]="isPressed('bl')"
+    (pointerdown)="onPointerDown($event, 'bl')"
+    (pointerup)="onPointerUp($event, 'bl')"
+    (pointercancel)="onPointerCancel($event, 'bl')"
+    (lostpointercapture)="onLostPointerCapture($event, 'bl')"
+  >
+    BL
+  </button>
+
+  <button
+    class="corner br"
+    [class.pressed]="isPressed('br')"
+    (pointerdown)="onPointerDown($event, 'br')"
+    (pointerup)="onPointerUp($event, 'br')"
+    (pointercancel)="onPointerCancel($event, 'br')"
+    (lostpointercapture)="onLostPointerCapture($event, 'br')"
+  >
+    BR
+  </button>
+</div>

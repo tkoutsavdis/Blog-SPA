@@ -1,0 +1,45 @@
+/* Κρίσιμο για multi-touch + να μη “κλέβουν” scroll/zoom */
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  touch-action: none; /* KEY */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* τα κουμπιά */
+.corner {
+  position: absolute;
+  z-index: 20;
+
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 600;
+
+  opacity: 0.9;
+}
+
+/* γωνίες */
+.tl { top: 18px; left: 18px; }
+.tr { top: 18px; right: 18px; }
+.bl { bottom: 18px; left: 18px; }
+.br { bottom: 18px; right: 18px; }
+
+/* μικρό feedback όταν είναι pressed */
+.corner.pressed {
+  transform: scale(0.98);
+  opacity: 1;
+}

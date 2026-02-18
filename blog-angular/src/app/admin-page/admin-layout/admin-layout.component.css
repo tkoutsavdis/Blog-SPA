@@ -1,0 +1,44 @@
+.admin-sidenav-container {
+    height: 100vh;
+}
+  
+.admin-sidenav {
+  background-color: #144E93;          
+  
+}
+
+.admin-sidenav .mat-mdc-list-item:hover {
+  background-color: #104381;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 1) Header/Logo */
+.sidebar-header {
+  width: 180px;
+  height: 140px;
+  margin: 30px 20px;
+  cursor: pointer;
+}
+
+.sidebar-logo {
+  width: 180px;
+  height: 140px;
+  object-fit: contain;
+}
+
+/* 2) Navigation: use your existing color overrides to make text white */
+:host ::ng-deep .mat-mdc-nav-list .mat-mdc-list-item .mdc-list-item__content .mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+  color: white; 
+}
+
+
+/* 3) Footer/Logout: pinned at the bottom of the container */
+.sidebar-footer {
+  margin-top: auto;  /* push this div to the bottom in a flex container */
+  
+}

@@ -1,0 +1,61 @@
+<div class="adminMainContent">
+    
+    <h4 class="mainTitle">Διαχείριση Φωτογραφιών Αρχικής Σελίδας</h4>
+
+    <div class="info">ΠΡΟΣΟΧΗ:</div>
+    <ul class="instructions">
+        <li>Aspect ratio Φωτογραφιών carousel: 16:9</li>
+    </ul>
+
+    <form [formGroup]="carouselForm" (ngSubmit)="submitImages()">
+
+        <label for="image1" id="image1" class="form-label">Επιλογή 1ης φωτογραφίας:</label>
+        <input
+            type="file"
+            id="image1"
+            class="form-control"
+            (change) = "onImageSelected($event,1)"
+            accept= "image/*"
+        />
+
+        <label for="image2" class="form-label">Επιλογή 2ης φωτογραφίας:</label>
+        <input
+            type="file"
+            id="image2"
+            class="form-control"
+            (change) = "onImageSelected($event,2)"
+            accept= "image/*"
+        />
+
+        <label for="image3" class="form-label">Επιλογή 3ης φωτογραφίας:</label>
+        <input
+            type="file"
+            id="image3"
+            class="form-control"
+            (change) = "onImageSelected($event,3)"
+            accept= "image/*"
+        />
+
+        <label class="form-label">Επιλογή 4ης φωτογραφίας:</label>
+        <input
+            type="file"
+            id="image3"
+            class="form-control"
+            (change) = "onImageSelected($event,4)"
+            accept= "image/*"
+        />
+
+        <button
+            [disabled]="!carouselForm.valid || isSubmitting"
+            type="submit"
+            class="btn submitBtn"
+        >
+            Υποβολή
+        </button>
+
+        <div *ngIf="formValidity()" style="color: red;">
+            Όλα τα πεδία πρέπει να είναι συμπληρωμένα
+        </div>
+        
+    </form>
+</div>

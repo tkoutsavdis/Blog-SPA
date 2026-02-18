@@ -1,0 +1,148 @@
+<div class="adminMainContent">
+    
+    <h4 class="mainTitle">Διαχείριση Δημοσιεύσεων</h4>
+
+    <form [formGroup]="editPublicationForm" (ngSubmit)="editPublication()">
+        
+        <label class="form-label" for="selectType">Επιλογή τύπου Δημοσίευσης:</label>
+        <select
+            id="selectType"
+            class="form-select" 
+            formControlName="selectType"
+        >
+            <option [value]="'announcement'">Ανακοίνωση</option>
+            <option [value]="'action'">Δράση</option>
+
+        </select>
+
+        <label for="selectTitle" class="form-label">Επιλογή Τίτλου:</label>
+        <input
+            #titleInput
+            id="selectTitle"
+            class="form-control"
+            type="text"
+            placeholder="Τίτλος"
+            matInput
+            formControlName="selectTitle"
+            [matAutocomplete]="titleAuto"
+            (input)="filterTitle()"
+            (focus)="filterTitle()"
+        >
+    
+        <mat-autocomplete #titleAuto="matAutocomplete" requireSelection>
+            <mat-option *ngFor="let selection of filteredTitlesList" [value]="selection.title">
+                {{ selection.title }}
+            </mat-option>
+        </mat-autocomplete> 
+
+
+        <div *ngIf="selectType?.value && selectTitle?.value && !selectTitle?.disabled">
+
+            <label class="form-check-label">Επιλέξτε κατηγορία:</label>
+            <mat-radio-group formControlName="type" class="radio-group">
+
+                <div class="radio-option">
+                    <mat-radio-button value="announcement">
+                        Ανακοίνωση
+                    </mat-radio-button>
+                </div>
+            
+                <div class="radio-option">
+                    <mat-radio-button value="action">
+                        Δράση
+                    </mat-radio-button>
+                </div>
+
+            </mat-radio-group>
+
+            <label for="title" class="form-label">Τίτλος</label>
+            <input 
+                type="text"
+                id="title"
+                class="form-control"
+                formControlName="title"
+            >
+
+            <label for="content" class="form-label">Κείμενο</label>
+            <quill-editor
+                formControlName="content"
+                [theme]="'snow'"
+                [modules]="quillModules"
+                [placeholder]="'Πληκτρολογήστε το κείμενο εδώ...'"
+                (onEditorCreated)="handleEditorCreated($event)"
+                class="myEditor"
+            >
+            </quill-editor>
+
+            <label for="dateAndTime" class="form-label">Ημερομηνία & Ώρα</label>
+            <input
+                type="datetime-local"
+                id="dateAndTime"
+                class="form-control"
+                formControlName="dateAndTime"
+            />
+
+            <p class="form-label">Ανεβασμένες Φωτογραφίες:</p>
+            <div *ngIf="publicationImages?.length" class="allImages">
+                <div *ngFor="let image of publicationImages; let i = index" class="image-container">
+                  <img [src]="image" class="singleImage"/>
+                  <i class="bi bi-trash-fill delete-icon" (click)="removeImage(i)"></i>
+                </div>
+            </div>
+
+            <div class="info">ΠΡΟΣΟΧΗ:</div>
+            <ul class="instructions">
+                <li>Aspect ratio 1ης Φωτογραφίας: 4:5</li>
+                <li>Aspect ratio Φωτογραφιών: 4:3</li>
+            </ul>
+
+            <div formGroupName="images">
+
+                <label for="firstImage" class="form-label">Αλλαγή πρώτης φωτογραφίας (Προαιρετικό)</label>
+                <input
+                    #firstImageInput
+                    type="file" 
+                    id="firstImage"
+                    class="form-control" 
+                    (change)="onFirstImageSelected($event)"
+                    accept="image/*"
+                >
+                                
+                <label for="additionalImages" class="form-label">Επιπλέον Φωτογραφίες (Προαιρετικό):</label>
+                <input
+                    #additionalImagesInput
+                    type="file" 
+                    id="additionalImages"
+                    class="form-control"
+                    (change)="onAdditionalImagesSelected($event)" 
+                    accept="image/*"
+                    multiple
+                >
+            </div>
+
+            <button 
+                [disabled]="!editPublicationForm.valid"
+                type="submit"
+                class="btn submitBtn"
+            >
+                Υποβολή
+            </button>
+
+            <div *ngIf="formValidity()" style="color: red;">
+                Όλα τα πεδία πρέπει να είναι συμπληρωμένα
+            </div>
+
+
+            <div class="deletePanel">
+                <p class="deleteText">Αν είστε βέβαιοι οτι θέλετε να διαγράψετε τη δημοσίευση, πατήστε εδώ:</p>
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click) = "deletePublication()"
+                >
+                    Διαγραφή
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

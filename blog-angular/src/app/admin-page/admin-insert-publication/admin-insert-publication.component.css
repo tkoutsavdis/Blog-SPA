@@ -1,0 +1,58 @@
+.adminMainContent{
+    margin: 0 2%;
+    margin-top: 50px;
+}
+
+.mainTitle{
+    color: #144E93;
+    margin-bottom: 30px;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.form-control{
+    margin-bottom: 40px;
+}
+
+
+:host ::ng-deep .mat-mdc-radio-button.mat-mdc-radio-checked {
+    --mdc-radio-selected-icon-color: #144E93 !important;
+    --mdc-radio-selected-focus-icon-color:#144E93 !important;
+    --mdc-radio-selected-hover-icon-color:#144E93 !important;
+}
+
+.myEditor{
+    width: 100%;
+    height: 500px;
+}
+
+.info{
+    font-weight: bold;
+}
+
+.instructions{
+    font-style: italic;
+    
+}
+
+.submitBtn{
+    margin-bottom: 30px;
+}
+
+@media(min-width:992px){
+    .mainTitle{
+        margin-bottom: 40px;
+    }
+
+    .radio-group {
+        flex-direction: row;
+    }
+
+    .form-control{
+        width: 75%;
+    }
+}

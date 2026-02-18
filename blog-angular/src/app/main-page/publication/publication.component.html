@@ -1,0 +1,47 @@
+<div class="mainContent">
+    
+    <div class="title-with-line">
+        <span class="mainTitle">{{publicationType}}</span>
+        <div class="title-line"></div>
+    </div>
+
+    <div class="mainTitle">{{publicationTitle}}</div>
+    <div class="publicationDate">Ημ. Δημοσίευσης: {{publicationDate}}</div>
+    
+    <img [src]="firstImageUrl" class="firstImage">
+
+    <div class="textContent" [innerHTML]="publicationContent"></div>
+    
+    <!-- carousel images if exists -->
+    <div *ngIf="otherImages && otherImages.length > 0" class="images">
+        <!-- <div class="mainTitle">Φωτογραφικό Υλικό</div> -->
+
+        <div class="carousel-container">
+
+            <ngb-carousel 
+                #myCarousel 
+                [showNavigationArrows]="false" 
+                [interval]="0" 
+                class="carousel-white"
+            >
+                <ng-template ngbSlide *ngFor="let img of otherImages; let i = index">
+                <div class="slide-wrapper">
+                    <div class="image-container">
+                    <img [src]="img" alt="Carousel Image {{ i }}" class="carouselImage">
+                    </div>
+                </div>
+                </ng-template>
+            </ngb-carousel>
+      
+            <button type="button" class="custom-nav custom-prev" (click)="myCarousel.prev()">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <button type="button" class="custom-nav custom-next" (click)="myCarousel.next()">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+
+        </div>
+    </div>
+
+</div>

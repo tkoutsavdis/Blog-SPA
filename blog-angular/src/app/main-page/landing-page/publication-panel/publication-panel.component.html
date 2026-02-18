@@ -1,0 +1,16 @@
+<div
+  (click) = "navigateToPublication(id)"
+  class="publicationPanel"
+  [ngStyle]="{
+    'background': 'linear-gradient(180deg, rgba(6, 24, 45, 0) 0%, #0D365E 100%), url(' + backgroundImage + ')',
+    'background-size': 'cover',
+    'background-position': 'center',
+    'background-repeat': 'no-repeat'
+  }"
+  (mouseenter)="onHover(true)"
+  (mouseleave)="onHover(false)"
+>
+  <div class="panelTitle">
+    {{ showFullTitle ? truncatedTitleExpand : truncatedTitle }}
+  </div>
+</div>

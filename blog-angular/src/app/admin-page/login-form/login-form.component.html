@@ -1,0 +1,26 @@
+<div class="entirePage">
+    <div class="LoginPagePanel">
+
+        <img src="assets/logo2.svg" alt="Logo" class="logo"/>
+
+        <form [formGroup] ="loginForm" class="form">
+            <input 
+                type="text"
+                id="username"
+                class="input"
+                formControlName="username"
+                placeholder = "Username"
+            >
+
+            <input 
+                type="password"
+                id="password"
+                class="input"
+                formControlName = "password"
+                placeholder="password"
+            >
+
+            <button class="login-button" (click)="login()">Σύνδεση</button>
+        </form>
+    </div>
+</div>

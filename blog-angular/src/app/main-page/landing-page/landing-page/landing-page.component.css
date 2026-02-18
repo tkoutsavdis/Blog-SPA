@@ -1,0 +1,47 @@
+.mainContent {
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5%;
+}
+
+
+.title-with-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 5%;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.title-line {
+  flex-grow: 1; 
+  height: 2px;
+  background-color: #0281FF;
+}
+
+.buttonPanel{
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.submitBtn{
+  padding: 10px 20px;
+}
+
+@media (min-width: 992px) {
+  .mainContent {
+    gap:50px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .title-text {
+    font-size: 36px; 
+    font-weight: bold; 
+    color: black; 
+  }
+}

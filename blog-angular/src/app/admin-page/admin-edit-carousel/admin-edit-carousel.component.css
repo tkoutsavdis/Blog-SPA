@@ -1,0 +1,33 @@
+.adminMainContent{
+    margin: 0 2%;
+    margin-top: 50px;
+}
+
+.mainTitle{
+    color: #144E93;
+    margin-bottom: 30px;
+}
+
+.form-control{
+    margin-bottom: 40px;
+}
+
+.info{
+    font-weight: bold;
+}
+
+.instructions{
+    font-style: italic;
+    
+}
+
+@media(min-width:992px){
+    .mainTitle{
+        margin-bottom: 40px;
+    }
+
+    .form-control{
+        width: 75%;
+    }
+
+}

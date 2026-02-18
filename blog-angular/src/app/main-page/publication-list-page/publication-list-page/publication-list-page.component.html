@@ -1,0 +1,31 @@
+<div class="publicationPanel">
+
+    <div class="title-with-line">
+      <span class="mainTitle">{{ finalTitle }}</span>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="publication-list-container">
+      <publication-list-panel 
+        *ngFor="let publication of publicationList"
+        [id] = publication.id
+        [title] = publication.title
+        [imageUrl] = publication.imageUrl
+        [date] = publication.dateAndTime
+        [content] = publication.content
+        [type] = publication.type
+      >
+      </publication-list-panel>
+    </div>
+    
+    <div class="some">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="currentPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [boundaryLinks]="true"
+        (pageChange)="onPageChange($event)">
+      </ngb-pagination>
+    </div>
+</div>

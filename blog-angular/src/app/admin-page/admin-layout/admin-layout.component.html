@@ -1,0 +1,41 @@
+<mat-sidenav-container class="admin-sidenav-container">
+
+    <mat-sidenav
+      #drawer
+      [mode]="isSmallScreen ? 'over' : 'side'"
+      [opened]="!isSmallScreen"
+      class="admin-sidenav"
+    >
+      <div class="sidebar-container">
+
+        <div class="sidebar-header">
+          <img src="assets/logo1-white.svg" alt="Logo" class="sidebar-logo" (click) ="navigate('/admin-page/home')" />
+        </div>
+    
+        <mat-nav-list class="sidebar-menu">
+          <a mat-list-item [style.color]="'white'" (click) ="navigate('/admin-page/home')">Αρχική</a>
+          <a mat-list-item (click) ="navigate('/admin-page/insert-publication')">Εισαγωγή Δημοσίευσης</a>
+          <a mat-list-item (click) ="navigate('/admin-page/edit-publication')">Διαχείριση Δημοσιεύσεων</a>
+          <a mat-list-item (click) ="navigate('/admin-page/edit-carousel')">Διαχείριση Αρχικής Σελίδας</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="sidebar-footer">
+          <a mat-list-item (click)="logout()">Αποσύνδεση</a>
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+   
+    <!-- Main Content -->
+    <mat-sidenav-content>
+        <button
+          *ngIf="isSmallScreen"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <router-outlet></router-outlet>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>

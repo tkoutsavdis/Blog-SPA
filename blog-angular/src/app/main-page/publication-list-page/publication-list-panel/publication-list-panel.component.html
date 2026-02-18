@@ -1,0 +1,22 @@
+<div class="publicationPanel" (click) = "navigateToPublication(id)">
+    <img [src]="imageUrl" class="publicationImage">
+    <div class="infoContainer">
+
+        <div class="panelTitle myType">
+            <div *ngIf="type === 'announcement'">ΑΝΑΚΟΙΝΩΣΗ</div>
+            <div *ngIf="type === 'action'">ΔΡΑΣΗ</div>
+        </div>
+
+        <div class="mainInfo">
+            <div id="title" class="panelTitle">{{title}}</div>
+            <div class="miniText">
+                <div class="link">Δείτε πεισσότερα</div>
+            </div>
+        </div>
+
+        <div class="extraInfo">
+            <div class="miniText">Ημ. Δημοσίευσης: </div>
+            <div>{{date}}</div>
+        </div>
+    </div>
+</div>

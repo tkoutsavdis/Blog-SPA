@@ -1,0 +1,85 @@
+.entirePanel{
+    width: 100%;
+    margin-top: 100px;
+    background-color: #144E93;
+    padding-top: 50px;
+}
+
+.panelHeader{
+    margin: 0 5%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.half-line{
+    flex-grow: 1;
+    height: 2px;
+    background-color: #0281FF;
+}
+
+.full-line{
+    flex-grow: 1;
+    height: 2px;
+    background-color: #0281FF;
+    margin: 0 5%;
+    margin-top: 100px;
+}
+
+.myHeading{
+    color: white;
+}
+
+.optionsPanel{
+    margin: 0 5%;
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myPanel{
+    width: 80%;
+    height: 280px;
+    margin-top:  50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+    color: white;
+
+    border: 2px solid #44A0FC;
+    border-radius: 10px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.myPanel:hover {
+    background-color: #104381;
+    border-color: #0374e6;
+    transition: background-color 0.3s ease;
+}
+
+.mainTitle{
+    margin-top: 20px;
+}
+
+@media (min-width: 992px){
+
+    .optionsPanel{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .myPanel{
+        width: 25%;
+    }
+}

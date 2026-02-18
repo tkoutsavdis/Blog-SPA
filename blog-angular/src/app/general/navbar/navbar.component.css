@@ -1,0 +1,135 @@
+/* desktop */
+
+.navbar{
+    padding: 0;
+} 
+
+.navbar-brand{
+    padding: 0;
+}
+
+.nav-item{
+  color: white;
+  cursor: pointer;
+}
+
+.logoImg{
+    width:170px;
+    height: 100px;
+    
+    cursor: pointer;
+    object-fit:cover;
+}
+
+.dropdown-item {
+    color: #144E93;
+    cursor: pointer;
+}
+
+/* of canvas */
+
+.offcanvas{
+    background-color: #144E93;
+}
+
+.offcanvas .nav-item.dropdown .dropdown-menu {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    width: 100%; 
+    display: none !important;
+    cursor: pointer;
+  }
+  
+  .offcanvas .nav-item.dropdown.show .dropdown-menu {
+    display: block !important;
+  }
+  
+  .offcanvas .dropdown-menu {
+    background-color: #144E93 !important;
+    color: white !important;
+    border: none !important; 
+  }
+  
+  .offcanvas .dropdown-item {
+    color: white !important;
+  }
+  
+  .offcanvas .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+  
+
+
+.navbar-toggler{
+    border: none !important;
+}
+
+.bi-list{
+    color: #144E93 !important;
+}
+
+
+.offcanvas-start {
+    --bs-offcanvas-width: 290px; 
+}
+
+.dropdown-icon {
+  width: 16px; 
+  height: 16px;
+  cursor: pointer;
+}
+
+.nav-link.dropdown-toggle::after {
+  display: none !important; 
+}
+
+
+@media(min-width:992px){
+  .logoImg{
+
+      margin-left: 25px;
+
+      width:230px;
+      height: 100px;
+      
+      cursor: pointer;
+      object-fit:cover;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 4rem; 
+  }
+
+  .nav-link {
+    color: #144E93;
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #144E93, #144E93);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    transition: background-size 0.3s ease;
+  }
+
+  .nav-link.dropdown-toggle.show {
+    color: #144E93 !important; 
+  }
+  
+  .nav-link:hover,
+.nav-link.dropdown-toggle.show {
+  background-size: 100% 2px; 
+}
+
+  .dropdown-item:focus,
+  .dropdown-item:active {
+    background-color: white !important;
+    color: #144E93 !important;
+  }
+
+
+
+
+}

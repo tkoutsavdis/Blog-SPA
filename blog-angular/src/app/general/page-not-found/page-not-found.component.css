@@ -1,0 +1,18 @@
+.notFoundContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoImg{
+    width: 300px;
+    object-fit: cover;
+}
+
+.myText{
+    font-style: italic;
+}
+
+.submitBtn{
+    margin-top: 20px;
+}

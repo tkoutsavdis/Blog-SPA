@@ -1,0 +1,38 @@
+<landing-carousel></landing-carousel>
+
+<div class="title-with-line">
+    <span class="mainTitle">Τελευταιες Ανακοινώσεις</span>
+    <div class="title-line"></div>
+</div>
+   
+<div class="mainContent">
+    <publication-panel *ngFor="let announcement of announcementList"
+        [id] = announcement.id
+        [title] = announcement.title
+        [backgroundImage] = announcement.imageUrl
+    ></publication-panel>
+</div>
+
+<div class="buttonPanel">
+    <button class="btn submitBtn" (click) = "navigateToPublications('announcement')">Δείτε όλες τις ανακοινώσεις</button>
+</div>
+
+<div class="title-with-line">
+    <span class="mainTitle">Τελευταιες Δράσεις</span>
+    <div class="title-line"></div>
+</div>
+
+<div class="mainContent">
+
+    <publication-panel *ngFor="let action of actionList"
+        [id] = action.id
+        [title] = action.title
+        [backgroundImage] = action.imageUrl
+    ></publication-panel>
+</div>
+
+<div class="buttonPanel">
+    <button class="btn submitBtn" (click) = "navigateToPublications('action')">Δείτε όλες τις δράσεις</button>
+</div>
+
+<information-panel></information-panel>

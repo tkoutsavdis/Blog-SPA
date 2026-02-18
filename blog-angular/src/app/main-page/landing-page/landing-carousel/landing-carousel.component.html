@@ -1,0 +1,14 @@
+<ngb-carousel
+  *ngIf="carouselImages && carouselImages.length"
+  [interval]="6000"
+  [pauseOnHover]="false"
+  [showNavigationArrows]="false"
+  [showNavigationIndicators]="false"
+  class="full-carousel"
+> 
+  <ng-template ngbSlide *ngFor="let img of carouselImages; let i = index">
+    <div class="slide-wrapper">
+      <img class="carousel-img" [src]="img.imageUrl" alt="Carousel Image" />
+    </div>
+  </ng-template>
+</ngb-carousel>

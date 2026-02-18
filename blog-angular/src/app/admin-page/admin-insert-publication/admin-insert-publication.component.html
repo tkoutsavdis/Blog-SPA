@@ -1,0 +1,96 @@
+<div class="adminMainContent">
+    
+    <h4 class="mainTitle">Εισαγωγή Δημοσίευσης</h4>
+
+    <form [formGroup]="insertPublicationForm" (ngSubmit)="submitPublication()">
+        <label class="form-check-label">Επιλέξτε κατηγορία:</label>
+        
+        <mat-radio-group formControlName="type" class="radio-group">
+
+            <div class="radio-option">
+                <mat-radio-button value="announcement">
+                    Ανακοίνωση
+                </mat-radio-button>
+            </div>
+        
+            <div class="radio-option">
+                <mat-radio-button value="action">
+                    Δράση
+                </mat-radio-button>
+            </div>
+
+        </mat-radio-group>
+
+        <label for="title" class="form-label">Τίτλος</label>
+        <input 
+            type="text"
+            id="title"
+            class="form-control"
+            formControlName="title"
+        >
+
+        <label for="content" class="form-label">Κείμενο</label>
+        <quill-editor
+            formControlName="content"
+            [theme]="'snow'"
+            [modules]="quillModules"
+            [placeholder]="'Πληκτρολογήστε το κείμενο εδώ...'"
+            class="myEditor"
+        >
+        </quill-editor>
+
+        <label for="dateAndTime" class="form-label">Ημερομηνία & Ώρα</label>
+        <input
+            type="datetime-local"
+            id="dateAndTime"
+            class="form-control"
+            formControlName="dateAndTime"
+        />
+
+        <div class="info">ΠΡΟΣΟΧΗ:</div>
+        <ul class="instructions">
+            <li>Aspect ratio 1ης Φωτογραφίας: 4:5</li>
+            <li>Aspect ratio Φωτογραφιών: 4:3</li>
+        </ul>
+
+        <div formGroupName="images">
+
+            <label for="firstImage" class="form-label">Πρώτη φωτογραφία (Υποχρεωτικό):</label>
+            
+            <input
+              #firstImageInput
+              type="file" 
+              id="firstImage"
+              class="form-control" 
+              (change)="onFirstImageSelected($event)"
+              (blur)="markFirstImageTouched()"
+              accept="image/*"
+              required>
+            
+            <label for="additionalImages" class="form-label">Φωτογραφίες (Προαιρετικό):</label>
+            <input
+              #additionalImagesInput
+              type="file" 
+              id="additionalImages"
+              class="form-control"
+              (change)="onAdditionalImagesSelected($event)" 
+              accept="image/*"
+              multiple>
+          </div>
+
+
+        <button 
+            [disabled]="!insertPublicationForm.valid || isSubmitting"
+            type="submit"
+            class="btn submitBtn"
+        >
+            Εισαγωγή
+        </button>
+
+        <div *ngIf="formValidity()" style="color: red;">
+            Όλα τα πεδία πρέπει να είναι συμπληρωμένα
+        </div>
+    </form>
+</div>
+
+
